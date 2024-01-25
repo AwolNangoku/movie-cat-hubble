@@ -5,10 +5,7 @@ import Movie from "./movie"
 
 const Movies = () => {
   const { searchTerm } = useParams()
-
-  console.log('Search term...', searchTerm)
-  
-  const { movies, isLoading } = useMovies()
+  const { movies, isLoading } = useMovies(searchTerm)
 
   return (
     <div className="h-screen w-screen">
