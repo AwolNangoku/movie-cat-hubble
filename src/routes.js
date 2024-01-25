@@ -7,7 +7,8 @@ const Movie = lazy(() => import("../src/pages/movie"))
 const routes = {
   home: "/",
   movies: "/movies",
-  movie: "/movies/:id"
+  movie: "/movies/:id",
+  searchMovies: "/search-movies/:searchTerm",
 }
 
 const publicRoutes = [
@@ -21,6 +22,12 @@ const publicRoutes = [
     exact: true,
     title: 'Movies',
     path: routes.movies,
+    component: Movies
+  },
+  {
+    exact: true,
+    title: 'Movies',
+    path: routes.searchMovies,
     component: Movies
   },
   {

@@ -1,15 +1,19 @@
+import { useParams } from "react-router"
+import { SearchMovies } from "../../components/forms"
 import useMovies from "../../hooks/use-movies"
 import Movie from "./movie"
 
 const Movies = () => {
+  const { searchTerm } = useParams()
+
+  console.log('Search term...', searchTerm)
+  
   const { movies, isLoading } = useMovies()
 
   return (
     <div className="h-screen w-screen">
       <div className="p-6" />
-      <div className="flex place-content-center">
-        Search form here
-      </div>
+      <SearchMovies />
       <div className="p-6" />
       {(() => {
         if (isLoading) {
